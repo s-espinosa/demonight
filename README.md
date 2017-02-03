@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/s-espinosa/demonight.png?label=ready&title=Ready)](https://waffle.io/s-espinosa/demonight)
 # DEMO NIGHT!
 
 A basic voting application for competitions currently designed for the [Turing School of Software & Design](https://www.turing.io/) student demo night competition.
