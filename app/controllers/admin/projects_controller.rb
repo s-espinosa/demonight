@@ -25,6 +25,7 @@ class Admin::ProjectsController < Admin::BaseController
 
   def destroy
     Project.find(params[:id]).delete
+    DemoNight.current.accepting_submissions if DemoNight.current.projects.count < 16
     redirect_to request.referrer
   end
 
