@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = DemoNight.current.projects.new(project_params)
     if @project.save
+      DemoNight.current.voting! if DemoNight.current.projects.count >= 16
       flash[:success] = "Project successfully submitted!"
       redirect_to projects_path
     else
