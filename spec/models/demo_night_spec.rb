@@ -38,8 +38,8 @@ RSpec.describe DemoNight, type: :model do
       project3.votes.create(user: user1, representation: 5, challenge: 5, wow: 5)
       project3.votes.create(user: user2, representation: 5, challenge: 5, wow: 5)
       projects = [project1, project2, project3]
-      demonight = create(:demo_night) 
-      demonight.projects << projects 
+      demonight = create(:demo_night)
+      demonight.projects << projects
       demonight_projects = demonight.sorted_projects
 
       expect(demonight_projects.first.name).to eq(project3.name)
