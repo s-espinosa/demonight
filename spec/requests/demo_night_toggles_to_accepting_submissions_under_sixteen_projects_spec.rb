@@ -10,13 +10,13 @@ describe 'Demo Night Toggles to accepting submissions after 16th project is crea
     subject { delete "/admin/projects/#{Project.last.id}" }
 
     it 'changes the current demo night status' do
-      create_list(:project, 15, demo_night: demo_night)
+      create_list(:project, 16, demo_night: demo_night)
 
       expect { subject }.to change { DemoNight.current.status }.to('accepting_submissions')
     end
 
     it 'does not current demo night status' do
-      create_list(:project, 16, demo_night: demo_night)
+      create_list(:project, 17, demo_night: demo_night)
 
       expect { subject }.to_not change { DemoNight.current.status }
     end

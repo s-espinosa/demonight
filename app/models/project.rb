@@ -61,12 +61,12 @@ class Project < ApplicationRecord
   private
 
   def check_and_toggle_demo_night_to_accepting
-    return unless demo_night.number_of_projects < 15
+    return unless demo_night.number_of_projects < 16
     demo_night.accepting_submissions!
   end
 
   def check_and_toggle_demo_night_to_voting
-    return unless demo_night.number_of_projects > 15
+    return unless demo_night.number_of_projects > 16
     demo_night.voting!
   end
 end

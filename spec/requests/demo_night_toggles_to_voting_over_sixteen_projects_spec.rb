@@ -11,13 +11,13 @@ describe 'Demo Night Toggles to voting after the 15th project is created', type:
     subject { post '/projects', params: { project: attrs } }
 
     it 'changes the current demo night status' do
-      create_list(:project, 15, demo_night: demo_night)
+      create_list(:project, 16, demo_night: demo_night)
 
       expect { subject }.to change { DemoNight.current.status }.to('voting')
     end
 
     it 'does not change the current demo night status' do
-      create_list(:project, 14, demo_night: demo_night)
+      create_list(:project, 15, demo_night: demo_night)
 
       expect { subject }.to_not change { DemoNight.current.status }
     end
