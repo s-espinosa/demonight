@@ -3,22 +3,26 @@ class DemoNight < ApplicationRecord
   has_many :votes, through: :projects
   validates :final_date, presence: true
 
-  enum status: [:accepting_submissions, :voting, :closed]
+  enum status: [:accepting_submissions, :voting, :closed, :archived]
 
   def self.current
-    where.not(status: "closed").first
+    where(status: ["accepting_submissions", "voting"]).first
   end
 
   def self.currents
-    where.not(status: "closed")
+    where(status: ["accepting_submissions", "voting"])
   end
 
   def self.inactives
-    where(status: "closed")
+    where(status: ["closed"])
+  end
+
+  def self.archived
+    where(status: "archived")
   end
 
   def active?
-    status != "closed"
+    status != "closed" && status != "archived"
   end
 
   def sorted_projects
@@ -31,5 +35,10 @@ class DemoNight < ApplicationRecord
 
   def number_of_projects
     projects.count
+  end
+
+  def archive
+    projects.each { |project| project.archive }
+    votes.each { |vote| vote.delete }
   end
 end

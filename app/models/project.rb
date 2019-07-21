@@ -12,23 +12,35 @@ class Project < ApplicationRecord
   end
 
   def average_representation
+    return archived_average_representation if archived_average_representation
     votes.average(:representation).round(3) if votes.count != 0
   end
 
   def average_challenge
+    return archived_average_challenge if archived_average_challenge
     votes.average(:challenge).round(3) if votes.count != 0
   end
 
   def average_wow
+    return archived_average_wow if archived_average_wow
     votes.average(:wow).round(3) if votes.count != 0
   end
 
   def average_total
+    return archived_average_total if archived_average_total
     if votes.count != 0
       ((votes.sum(:representation) + votes.sum(:challenge) + votes.sum(:wow)) / votes.count.to_f).round(3)
     else
       0
     end
+  end
+
+  def archive
+    self.archived_average_representation = average_representation
+    self.archived_average_challenge = average_challenge
+    self.archived_average_wow = average_wow
+    self.archived_average_total = average_total
+    self.save
   end
 
   def self.unvoted_by_user(user_id)

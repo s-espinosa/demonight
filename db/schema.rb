@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170206213539) do
+ActiveRecord::Schema.define(version: 20190720234753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,11 +26,15 @@ ActiveRecord::Schema.define(version: 20170206213539) do
     t.string   "name"
     t.string   "project_type"
     t.boolean  "final_confirmation"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "demo_night_id"
     t.integer  "user_id"
     t.text     "note"
+    t.float    "archived_average_representation"
+    t.float    "archived_average_challenge"
+    t.float    "archived_average_wow"
+    t.float    "archived_average_total"
     t.index ["demo_night_id"], name: "index_projects_on_demo_night_id", using: :btree
     t.index ["user_id"], name: "index_projects_on_user_id", using: :btree
   end

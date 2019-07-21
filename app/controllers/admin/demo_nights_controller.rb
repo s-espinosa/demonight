@@ -31,6 +31,9 @@ class Admin::DemoNightsController < Admin::BaseController
     end
 
     if dn.update(demo_night_params!)
+      if params[:demo_night][:status] == "archived"
+        dn.archive
+      end
       flash[:success] = "#{dn.name} now #{dn.status.humanize.downcase}"
       redirect_to admin_demo_nights_path
     else

@@ -17,3 +17,13 @@
     <% end %>
   </div>
 </div>
+
+<div class="archived-demo-nights">
+  <h2>Archived Demo Nights</h2>
+  <%= "No archived demo nights" if @demo_nights.archived.count == 0 %>
+  <div class="row">
+    <% @demo_nights.archived.each do |demo_night| %>
+      <%= render partial: "demo_night", locals: { demo_night: demo_night } %>
+    <% end %>
+  </div>
+</div>
