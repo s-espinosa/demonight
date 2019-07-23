@@ -16,6 +16,10 @@
       <% if demo_night.status != "closed" %>
       <%= link_to "close", admin_demo_night_path(demo_night, demo_night: {status: :closed}), method: :patch, class: "waves-effect waves-light btn turing-btn" %>
       <% end %>
+      <% if demo_night.status == "closed" %>
+
+        <%= link_to "archive", admin_demo_night_path(demo_night, demo_night: {status: :archived}), method: :patch, class: "waves-effect waves-light btn turing-btn" %>
+      <% end %>
     </div>
   </div>
 </div>

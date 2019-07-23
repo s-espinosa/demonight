@@ -19,10 +19,13 @@ describe "When a user visits the project index" do
 
     all('div.select-wrapper')[0].click
     find('div.select-wrapper li', text: '3').click
+    sleep(0.2)
     all('div.select-wrapper')[1].click
     find('div.select-wrapper li', text: '3').click
+    sleep(0.2)
     all('div.select-wrapper')[2].click
     find('div.select-wrapper li', text: '3').click
+    sleep(0.2)
     click_on "Submit"
 
     expect(current_path).to eq(demo_night_projects_path(@demo_night))
