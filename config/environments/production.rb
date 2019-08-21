@@ -37,8 +37,8 @@ Rails.application.configure do
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # production
-  config.action_cable.url = 'wss://demo.turing.io/cable'
-  config.action_cable.allowed_request_origins = [ 'https://demo.turing.io', 'http://demo.turing.io' ]
+  config.action_cable.url = 'wss://codefair.turing.io/cable'
+  config.action_cable.allowed_request_origins = [ 'https://codefair.turing.io', 'http://codefair.turing.io' ]
 
   # staging
   # config.action_cable.url = 'wss://staging-demons.herokuapp.com/cable'
