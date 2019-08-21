@@ -50,7 +50,7 @@ class Admin::DemoNightsController < Admin::BaseController
 
   def check_active_demo_nights
     if DemoNight.all.currents.any?
-      flash[:danger] = "There can only be 1 active demo night at a time."
+      flash[:danger] = "There can only be 1 active code fair at a time."
       redirect_to admin_demo_nights_path
     end
   end
@@ -58,7 +58,7 @@ class Admin::DemoNightsController < Admin::BaseController
   def check_active_for_update
     if DemoNight.currents.any?
       if DemoNight.current.id != params[:id].to_i
-        flash[:danger] = "There can only be 1 active demo night at a time."
+        flash[:danger] = "There can only be 1 active code fair at a time."
         redirect_to admin_demo_nights_path
       end
     end

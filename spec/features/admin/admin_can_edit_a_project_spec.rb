@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'When an admin visits the admin demo night show path' do
+describe 'When an admin visits the admin code fair show path' do
   it 'they can click on a link to edit a project' do
     admin = create(:admin, uid: 123456)
     demo_night = create(:demo_night_with_projects)
@@ -14,6 +14,6 @@ describe 'When an admin visits the admin demo night show path' do
 
     expect(page).not_to have_content(project1.name)
     expect(page).to have_content("New Name")
-    expect(page).to have_link('Other Projects from this Demo Night', href: admin_demo_night_path(demo_night))
+    expect(page).to have_link('Other Projects from this Code Fair', href: admin_demo_night_path(demo_night))
   end
 end

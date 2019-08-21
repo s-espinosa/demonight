@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "when an admin logs in" do
-  it "they can create a new demo night" do
+  it "they can create a new code fair" do
     admin = create(:admin, uid: 98765)
     demo  = create(:demo_night, status: 'closed')
 
@@ -12,11 +12,11 @@ describe "when an admin logs in" do
     end
 
     within('.active-demo-night') do
-      click_link "Create New Demo Night"
+      click_link "Create New Code Fair"
     end
-    fill_in "Name", with: "Demo Night - 1611"
+    fill_in "Name", with: "Code Fair - 1611"
     fill_in("demo_night[final_date]", with: "01/23/2017")
-    click_button "Create Demo Night!"
+    click_button "Create Code Fair!"
 
     expect(current_path).to eq("/admin/demo_nights/#{DemoNight.last.id}")
     within('.projects') do

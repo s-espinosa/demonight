@@ -1,7 +1,7 @@
 <% if current_admin? %>
-  <li><%= link_to "Demo Nights", admin_demo_nights_path %></li>
+  <li><%= link_to "Code Fairs", admin_demo_nights_path %></li>
   <% if !current_demo_night? %>
-    <li><%= link_to "New Demo Night", new_admin_demo_night_path %></li>
+    <li><%= link_to "New Code Fair", new_admin_demo_night_path %></li>
   <% else %>
     <li><%= link_to "Current Projects", admin_demo_night_path(DemoNight.current) %></li>
     <li><%= link_to "Live Scoreboard", admin_scoreboard_path %></li>

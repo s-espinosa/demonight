@@ -44,7 +44,7 @@ class VotesController < ApplicationController
 
   def check_voting
     unless DemoNight.currents.first.voting?
-      flash[:error] = "Rating not yet started for the current Demo Night"
+      flash[:error] = "Rating not yet started for the current Code Fair"
       redirect_to root_path unless DemoNight.currents.first.voting?
     end
   end
