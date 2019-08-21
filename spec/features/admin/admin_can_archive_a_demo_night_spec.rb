@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "When an admin views the demo night index", js: true  do
+describe "When an admin views the code fair index", js: true  do
   before do
     user  = create(:user)
     admin = create(:admin, uid: 123456)
@@ -14,7 +14,7 @@ describe "When an admin views the demo night index", js: true  do
     @closed = active
   end
 
-  it "they can open voting on a demo night" do
+  it "they can open voting on a code fair" do
     visit admin_demo_nights_path
     within(".closed-demo-nights") do
       click_link("archive")

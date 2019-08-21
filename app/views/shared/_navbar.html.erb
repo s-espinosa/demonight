@@ -1,8 +1,8 @@
 <ul id="dropdown1" class="dropdown-content">
   <% if current_admin? %>
-    <li><%= link_to "Demo Nights", admin_demo_nights_path %></li>
+    <li><%= link_to "Code Fairs", admin_demo_nights_path %></li>
     <% if !current_demo_night? %>
-      <li><%= link_to "New Demo Night", new_admin_demo_night_path %></li>
+      <li><%= link_to "New Code Fair", new_admin_demo_night_path %></li>
     <% else %>
       <li><%= link_to "Current Projects", admin_demo_night_path(DemoNight.current) %></li>
       <li><%= link_to "Live Scoreboard", admin_scoreboard_path %></li>
@@ -14,7 +14,7 @@
 <nav>
   <div class="nav-wrapper">
     <div class="container">
-      <a href="/" class="brand-logo">DEMO NIGHT!</a>
+      <a href="/" class="brand-logo">CODE FAIR!</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <% if current_admin? %>

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "When a visitor tries to log in" do
-  context "with no active demo night" do
+  context "with no active code fair" do
     it "they log in and see an apology" do
       visit '/'
       expect(current_path).to eq('/login')
@@ -13,7 +13,7 @@ describe "When a visitor tries to log in" do
     end
   end
 
-  context "with a demo night accepting submissions" do
+  context "with a code fair accepting submissions" do
     it "they log in and see a form to submit" do
       create(:demo_night)
 
@@ -30,7 +30,7 @@ describe "When a visitor tries to log in" do
     end
   end
 
-  context "with a demo night accepting votes" do
+  context "with a code fair accepting votes" do
     it "they log in and see a list of projects" do
       create(:demo_night_with_projects, status: 'voting')
 

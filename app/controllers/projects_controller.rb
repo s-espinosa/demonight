@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
       @project = DemoNight.current.projects.new
       @modules = ["BE Mod 2", "BE Mod 3", "BE Mod 4", "FE Mod 2", "FE Mod 3", "FE Mod 4", "Posse"]
     else
-      flash[:error] = "There is no active demo night yet. BRB."
+      flash[:error] = "There is no active code fair yet. BRB."
       redirect_to root_path
     end
   end

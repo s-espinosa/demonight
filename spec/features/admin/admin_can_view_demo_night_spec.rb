@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "When an admin visits the admin demo night show path" do
+describe "When an admin visits the admin code fair show path" do
   it "they see a list of projects" do
     user  = create(:user)
     admin = create(:admin, uid: 123456)

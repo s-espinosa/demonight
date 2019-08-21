@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'when an admin visits the demo night index' do
-  it 'they see a list of active and closed demo nights' do
+describe 'when an admin visits the code fair index' do
+  it 'they see a list of active and closed code fairs' do
     admin = create(:admin, uid: 98765)
     demo1 = create(:demo_night, status: 'closed')
     demo2 = create(:demo_night)

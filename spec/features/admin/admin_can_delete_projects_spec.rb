@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe "logged in admin" do
-  it "can delete a project from the demo nights index", js: true do
+  it "can delete a project from the code fairs index", js: true do
     admin = create(:admin)
     demo_night = create(:demo_night_with_projects)
     project1, project2 = demo_night.projects
