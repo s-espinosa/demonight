@@ -38,14 +38,16 @@ describe "When a user visits a project vote page" do
     end
 
     all('div.select-wrapper')[0].click
-    find('div.select-wrapper li', text: '3').click
+    sleep(0.2)
+    find('div.select-wrapper li', text: '4').click
     sleep(0.2)
     all('div.select-wrapper')[1].click
-    find('div.select-wrapper li', text: '3').click
+    sleep(0.2)
+    find('div.select-wrapper li', text: '4').click
     sleep(0.2)
     all('div.select-wrapper')[2].click
-    find('div.select-wrapper li', text: '3').click
     sleep(0.2)
+    find('div.select-wrapper li', text: '4').click
     click_on "Submit"
 
     expect(current_path).to eq(demo_night_projects_path(demo))
@@ -64,7 +66,7 @@ describe "When a user visits a project vote page" do
       expect(page).to_not have_content(demo.projects[2].name)
       expect(page).to have_content(demo.projects[6].name)
     end
-    expect(Vote.last.wow).to eq(3)
+    expect(Vote.last.wow).to eq(4)
     expect(Vote.last.user).to eq(user1)
   end
 end
