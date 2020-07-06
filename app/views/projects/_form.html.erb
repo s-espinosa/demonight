@@ -15,7 +15,7 @@
   <%= f.text_field :note %>
   <%= f.label :note %>
 </div>
-<div class="input-field col s12 checkbox">
+<div class="col s12 checkbox">
   <%= f.check_box :final_confirmation, {}, "true", "false" %>
   <%= f.label :final_confirmation, "Are you able to present at the Demo Night Finals on #{@project.demo_night.final_date}?" %>
   <p>Note: only Mod 3 and Mod 4 projects will be allowed to present at the Demo Night Finals.</p>
