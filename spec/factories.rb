@@ -1,26 +1,26 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user, aliases: [:owner] do
-    provider "github"
+    provider { "github" }
     sequence :uid do |n|
       "12345#{n}"
     end
-    name "First Last"
-    email "first@last.com"
-    nickname "nick"
-    github "https://github.com/nick"
+    name { "First Last" }
+    email { "first@last.com" }
+    nickname { "nick" }
+    github { "https://github.com/nick" }
 
     factory :admin do
-      role 1
+      role { 1 }
     end
   end
 
   factory :project do
-    group_members "Sharon Jones"
+    group_members { "Sharon Jones" }
     sequence :name do |n|
       "Witty Name #{n}"
     end
-    project_type "BE Mod 3"
-    final_confirmation true
+    project_type { "BE Mod 3" }
+    final_confirmation { true }
     demo_night
     owner
   end
@@ -29,8 +29,8 @@ FactoryGirl.define do
     sequence :name do |n|
       "DemoName #{n}"
     end
-    status 0
-    final_date '2017/01/23'
+    status { 0 }
+    final_date { '2017/01/23' }
 
     factory :demo_night_with_projects do
       after(:create) do |demo_night, evaluator|

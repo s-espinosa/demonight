@@ -19,7 +19,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'launchy'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'table_print'
   gem 'awesome_print'
 end
