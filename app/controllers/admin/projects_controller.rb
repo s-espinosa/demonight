@@ -6,7 +6,7 @@ class Admin::ProjectsController < Admin::BaseController
 
   def edit
     @project = Project.find(params[:id])
-    @modules = ["BE Mod 2", "BE Mod 3", "BE Mod 4", "FE Mod 2", "FE Mod 3", "FE Mod 4", "Posse"]
+    @modules = modules
   end
 
   def update

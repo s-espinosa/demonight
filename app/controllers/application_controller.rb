@@ -39,4 +39,8 @@ class ApplicationController < ActionController::Base
     current_dn = DemoNight.current
     current_dn.status == "accepting_submissions" && project.demo_night_id == current_dn.id && project.user_id == current_user.id
   end
+
+  def modules
+    ["BE Mod 2", "BE Mod 3", "BE Mod 4", "FE Mod 2", "FE Mod 3", "FE Mod 4", "Posse", "Mod 4 Cross Poll"]
+  end
 end
