@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
   def new
     if DemoNight.current
       @project = DemoNight.current.projects.new
-      @modules = ["BE Mod 2", "BE Mod 3", "BE Mod 4", "FE Mod 2", "FE Mod 3", "FE Mod 4", "Posse"]
+      @modules = modules
     else
       flash[:error] = "There is no active code fair yet. BRB."
       redirect_to root_path
@@ -32,7 +32,7 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
-    @modules = ["BE Mod 2", "BE Mod 3", "BE Mod 4", "FE Mod 2", "FE Mod 3", "FE Mod 4", "Posse"]
+    @modules = modules
   end
 
   def update
