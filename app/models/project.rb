@@ -45,7 +45,7 @@ class Project < ApplicationRecord
 
   def self.unvoted_by_user(user_id)
     projects = Vote.where(user_id: user_id).pluck(:project_id)
-    eligible = ["BE Mod 3", "FE Mod 3", "BE Mod 4", "FE Mod 4"]
+    eligible = ["BE Mod 3", "FE Mod 3", "BE Mod 4", "FE Mod 4", "Mod 4 Cross Poll"]
     where.not(id: projects).where(project_type: eligible)
   end
 
@@ -54,7 +54,7 @@ class Project < ApplicationRecord
   end
 
   def self.ineligible
-    eligible = ["BE Mod 3", "FE Mod 3", "BE Mod 4", "FE Mod 4"]
+    eligible = ["BE Mod 3", "FE Mod 3", "BE Mod 4", "FE Mod 4", "Mod 4 Cross Poll"]
     where.not(project_type: eligible)
   end
 
