@@ -6,6 +6,7 @@ class Project < ApplicationRecord
   belongs_to :demo_night
 
   validates_presence_of :name
+  validates_presence_of :description
 
   def number_of_votes
     votes.count

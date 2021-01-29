@@ -19,6 +19,7 @@ FactoryBot.define do
     sequence :name do |n|
       "Witty Name #{n}"
     end
+    description { "A great project!" }
     project_type { "BE Mod 3" }
     final_confirmation { true }
     demo_night
