@@ -6,4 +6,5 @@ describe Project do
   it { should belong_to(:demo_night) }
   it { should belong_to(:owner) }
   it { should validate_presence_of :name }
+  it { should validate_presence_of :description }
 end

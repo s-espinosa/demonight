@@ -11,6 +11,10 @@
   <%= f.select(:project_type, @modules) %>
   <%= f.label :project_type %>
 </div>
+<div class="input-field col s12">
+  <%= f.text_field :description %>
+  <%= f.label :description %>
+</div>
 <div class="input-field col s12 checkbox">
   <%= f.check_box :final_confirmation, {}, "true", "false" %>
   <%= f.label :final_confirmation, 'Are you able to present at the Demo Night Finals?' %>

@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
       flash[:success] = "Project successfully submitted!"
       redirect_to projects_path
     else
-      flash[:error] = "There was an issue creating this project"
+      flash[:error] = @project.errors.full_messages.join(". ") + "."
       redirect_to new_project_path
     end
   end
@@ -48,6 +48,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:group_members, :name, :project_type, :final_confirmation, :demo_night_id, :note).merge(user_id: current_user.id)
+    params.require(:project).permit(:group_members, :name, :project_type, :final_confirmation, :demo_night_id, :note, :description).merge(user_id: current_user.id)
   end
 end
